@@ -49,9 +49,40 @@ nav a:hover {color:#00d4ff;}
 .slider:active {cursor:grabbing;}
 .slider::-webkit-scrollbar {display:none;}
 
-.movie-card {position:relative;flex:0 0 auto;width:200px;aspect-ratio:2/3;overflow:hidden;border-radius:10px;cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;background:#222;}
-.movie-card img {width:100%;height:100%;object-fit:cover;border-radius:10px;}
-.movie-card:hover {transform:scale(1.08);box-shadow:0 10px 20px rgba(0,0,0,0.5);}
+.movie-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #222;
+}
+
+/* Make links look like normal cards (not purple/blue) */
+.movie-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;        /* Inherit text color (keeps it white if overlay text is white) */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Images inside the link */
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Hover animation for the card */
+.movie-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
 
 /* Overlay Gradient & Hover */
 .overlay {position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);opacity:0;transition:.3s;display:flex;flex-direction:column;justify-content:center;align-items:center;}
