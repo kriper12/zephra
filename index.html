@@ -104,10 +104,14 @@
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
+      width: 100%;
+      aspect-ratio: 2/3; /* keeps movie and TV cards same size */
+      background: #222;
     }
     .movie-card img {
       width: 100%;
-      display: block;
+      height: 100%;
+      object-fit: cover;
       border-radius: 10px;
     }
     .movie-card:hover {
