@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inception | Zephra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/zephra.css">
+<style>
+  /* General */
+  body {margin:0;font-family:'Poppins',sans-serif;background:#0d0d0f;color:#fff;}
+  header {background:linear-gradient(to right,#111,#1a1a1f);padding:20px 50px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+  header nav a {color:#fff;margin-left:20px;text-decoration:none;font-weight:500;transition:.3s;}
+  header nav a:hover {color:#00d4ff;}
+
+  /* Hero Section */
+  .movie-hero {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url('https://image.tmdb.org/t/p/original/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #fff;
+  }
+  .movie-hero::after {
+    content:'';
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background: linear-gradient(to top, rgba(13,13,15,0.9) 20%, rgba(13,13,15,0.2) 60%, rgba(13,13,15,0) 100%);
+    z-index:1;
+  }
+
+  .movie-info-container {
+    position: relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    max-width:1100px;
+    width:100%;
+    margin-bottom:40px;
+    justify-content:center;
+  }
+  .movie-poster {
+    flex: 0 0 250px;
+    max-width:250px;
+    animation: fadeInLeft 1s ease forwards;
+  }
+  .movie-poster img {width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.7);}
+  .movie-details {
+    flex:1 1 0;
+    min-width:250px;
+    max-width:700px;
+    animation: fadeInRight 1s ease forwards;
+  }
+  .movie-details h1 {font-size:36px;margin-bottom:15px;word-break:break-word;}
+  .movie-details .metadata {margin-bottom:15px;display:flex;gap:10px;flex-wrap:wrap;}
+  .movie-details .metadata span {
+    background: rgba(0,212,255,0.2);
+    color: #00d4ff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:600;
+    font-size:14px;
+  }
+  .movie-details p.description {margin:20px 0;color:#ccc;line-height:1.6;font-size:16px;word-break:break-word;}
+  .movie-details .btn {
+    display:inline-block;padding:14px 28px;background:#00d4ff;color:#000;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;transition:0.3s;
+    box-shadow:0 6px 15px rgba(0,212,255,0.4);
+  }
+  .movie-details .btn:hover {
+    background:#00aacc;
+    box-shadow:0 10px 25px rgba(0,212,255,0.6);
+  }
+
+  @keyframes fadeInLeft {from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+  @keyframes fadeInRight {from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+
+  /* Movie Player Section */
+  .movie-player {display:flex; flex-direction:column; align-items:center; gap:15px; margin-bottom:50px; width:100%;}
+  .movie-player iframe {
+    width:100%;
+    max-width:900px;
+    aspect-ratio:16/9;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.7);
+  }
+  .movie-player select {
+    padding:8px 14px;
+    border-radius:6px;
+    border:1px solid #444;
+    background:#1a1a1f;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    max-width:300px;
+    width:90%;
+  }
+
+  /* Footer */
+  footer {background:#111;text-align:center;padding:20px;margin-top:50px;font-size:14px;color:#aaa;}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .movie-hero {padding:30px 15px;}
+    .movie-details h1 {font-size:28px;}
+    .movie-poster {flex:0 0 200px; max-width:200px;}
+  }
+  @media (max-width:600px){
+    .movie-info-container {flex-direction:column; align-items:center; text-align:center;}
+    .movie-details {max-width:100%;}
+    .movie-details h1 {font-size:24px;}
+    .movie-poster {flex:0 0 180px; max-width:180px;}
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <a href="../" class="logo"><img src="../assets/logo.png" alt="Zephra Logo" style="height:40px;"></a>
+  <nav>
+    <a href="../">Home</a>
+    <a href="/movies">Movies</a>
+    <a href="/tv">TV Shows</a>
+    <a href="/list">My List</a>
+    <a href="/">Sign In</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="movie-hero">
+  <div class="movie-info-container">
+    <div class="movie-poster">
+      <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg" alt="Inception Poster">
+    </div>
+    <div class="movie-details">
+      <h1>Inception</h1>
+      <div class="metadata">
+        <span>Action</span>
+        <span>Sci-Fi</span>
+        <span>Thriller</span>
+        <span>2010</span>
+        <span>8.8/10</span>
+      </div>
+      <p class="description">
+        A skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state. He is offered a chance at redemption if he can successfully perform an impossible task: inception.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Movie Player Section -->
+<section class="movie-player">
+  <iframe id="movieFrame" src="https://www.youtube.com/embed/YoHD9XEInc0" title="Inception Movie" allowfullscreen></iframe>
+  
+  <select id="videoSelector" onchange="changeVideoFromSelector()">
+    <option value="https://www.youtube.com/embed/YoHD9XEInc0">Inception</option>
+    <option value="https://www.youtube.com/embed/rSPw7tgCH9c6NqICZef4kZjFOQ5">The Godfather</option>
+    <option value="https://www.youtube.com/embed/dlIPGXPxXQTp9kFrRzn0RsfUelx">Interstellar</option>
+    <option value="https://www.youtube.com/embed/6bCplVkhowCjTHXWv49UjRPn0eK">Pulp Fiction</option>
+    <option value="https://www.youtube.com/embed/9O7gLzmreU0nGkIB6K3BsJbzvNv">Fight Club</option>
+  </select>
+</section>
+
+<footer>
+  © 2025 Zephra. All Rights Reserved.
+</footer>
+
+<script>
+function changeVideoFromSelector() {
+  const selector = document.getElementById('videoSelector');
+  document.getElementById('movieFrame').src = selector.value;
+}
+</script>
+
+</body>
+</html>
