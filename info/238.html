@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Godfather | Zephra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/zephra.css">
+<style>
+  body {margin:0;font-family:'Poppins',sans-serif;background:#0d0d0f;color:#fff;}
+  header {background:linear-gradient(to right,#111,#1a1a1f);padding:20px 50px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+  header nav a {color:#fff;margin-left:20px;text-decoration:none;font-weight:500;transition:.3s;}
+  header nav a:hover {color:#00d4ff;}
+  .hero-movie {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background: url('https://image.tmdb.org/t/p/original/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 50px;
+    color: #fff;
+  }
+  .hero-movie::after {
+    content:'';
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background: linear-gradient(to top, rgba(13,13,15,0.9) 20%, rgba(13,13,15,0.2) 60%, rgba(13,13,15,0) 100%);
+    z-index:1;
+  }
+  .movie-info-content {
+    position: relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    max-width:1200px;
+    width:100%;
+  }
+  .movie-poster {
+    flex:1 1 300px;
+    animation: fadeInLeft 1s ease forwards;
+  }
+  .movie-poster img {width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.7);}
+  .movie-details {
+    flex:2 1 500px;
+    animation: fadeInRight 1s ease forwards;
+  }
+  .movie-details h1 {font-size:48px;margin-bottom:15px;}
+  .movie-details .metadata {margin-bottom:15px;display:flex;gap:15px;flex-wrap:wrap;}
+  .movie-details .metadata span {
+    background: rgba(0,212,255,0.2);
+    color: #00d4ff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:600;
+    font-size:14px;
+  }
+  .movie-details p.description {margin:20px 0;color:#ccc;line-height:1.6;font-size:16px;}
+  .movie-details .btn {
+    display:inline-block;padding:14px 28px;background:#00d4ff;color:#000;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;transition:0.3s;
+    box-shadow:0 6px 15px rgba(0,212,255,0.4);
+  }
+  .movie-details .btn:hover {
+    background:#00aacc;
+    box-shadow:0 10px 25px rgba(0,212,255,0.6);
+  }
+  @keyframes fadeInLeft {from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+  @keyframes fadeInRight {from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+  
+  /* Similar Movies Section */
+  .similar-movies {padding:50px;max-width:1200px;margin:0 auto;}
+  .similar-movies h2 {font-size:32px;margin-bottom:20px;}
+  .similar-slider {display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;cursor:grab;}
+  .similar-slider::-webkit-scrollbar {display:none;}
+  .similar-card {flex:0 0 auto;width:180px;border-radius:10px;overflow:hidden;position:relative;transition:.3s;cursor:pointer;}
+  .similar-card img {width:100%;height:100%;object-fit:cover;}
+  .similar-card:hover {transform:scale(1.08);box-shadow:0 10px 20px rgba(0,0,0,0.5);}
+  .similar-card .overlay {position:absolute;bottom:0;width:100%;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);color:#fff;padding:8px;font-weight:600;text-align:center;font-size:14px;}
+  
+  footer {background:#111;text-align:center;padding:20px;margin-top:50px;font-size:14px;color:#aaa;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="../" class="logo"><img src="../assets/logo.png" alt="Zephra Logo" style="height:40px;"></a>
+  <nav>
+    <a href="../">Home</a>
+    <a href="/movies">Movies</a>
+    <a href="/tv">TV Shows</a>
+    <a href="/list">My List</a>
+    <a href="/">Sign In</a>
+  </nav>
+</header>
+
+<!-- Hero Movie Info -->
+<section class="hero-movie">
+  <div class="movie-info-content">
+    <div class="movie-poster">
+      <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg" alt="Inception Poster">
+    </div>
+    <div class="movie-details">
+      <h1>The Godfather</h1>
+      <div class="metadata">
+        <span>Drama</span>
+        <span>Crime</span>
+        <span>Thriller</span>
+        <span>1972</span>
+        <span>9.2/10</span>
+      </div>
+      <p class="description">
+        A skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state. He is offered a chance at redemption if he can successfully perform an impossible task: inception.
+      </p>
+      <a href="../watch/238.html" class="btn">▶ Watch Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Zephra. All Rights Reserved.
+</footer>
+
+</body>
+</html>
