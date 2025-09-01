@@ -102,4 +102,45 @@ nav a:hover {color:#00d4ff;}
   display: block;
 }
 
+.selector-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 260px;
+}
+
+.selector-wrapper select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #00d4ff;
+  background: rgba(20, 20, 25, 0.85);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+/* Hover/Focus Effect */
+.selector-wrapper select:hover,
+.selector-wrapper select:focus {
+  border-color: #00aacc;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+/* Custom Arrow */
+.selector-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #00d4ff;
+  font-size: 14px;
+}
+
 footer {background:#111;text-align:center;padding:20px;margin-top:40px;font-size:14px;color:#aaa;}
